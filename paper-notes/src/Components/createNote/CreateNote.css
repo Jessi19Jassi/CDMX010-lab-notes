@@ -1,0 +1,45 @@
+.nota{
+  background-color: yellow;
+  width: 300px;
+  padding: 10px 20px;
+  margin: 20% auto;
+  position: relative;
+}
+
+.crearNota{
+  background-color: rgba(0,0,0,0.8);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 1s;
+}
+
+#crearNota:target{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.formulario{
+  display: flex;
+  margin: 5%;
+  flex-flow: column wrap; /* Juntar dos propiedades de direction y wrap, se acomoda en columna y el wrap separar el elemento en cada línea*/
+  align-items: center; /* Para centrar las cajitas hijas*/
+}
+
+.formulario input{
+  border: none;
+  outline: none;
+}
+
+.formulario textarea{
+  border: none;
+  outline: none;
+}
+
+.formulario button{
+  width: 80px;
+}
