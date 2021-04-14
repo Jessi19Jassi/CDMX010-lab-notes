@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react'
 
-import { CreateNote } from './Components/createNote/CreateNote';
+import { CreateNote } from './Components/CreateNote';
 
 function App() {
   return (

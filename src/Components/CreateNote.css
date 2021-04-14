@@ -1,14 +1,17 @@
 .nota{
-  background-color: yellow;
+  background-color: rgba(252, 243, 181, 1);
   width: 300px;
+  height: 250px;
   padding: 10px 20px;
   margin: 20% auto;
   position: relative;
 }
 
 .crearNota{
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.3);
   position: fixed;
+  margin: 0;
+  padding: 0;
   top: 0;
   right: 0;
   bottom: 0;
@@ -23,23 +26,31 @@
   pointer-events: auto;
 }
 
-.formulario{
+.cerrar{
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.form{
   display: flex;
   margin: 5%;
   flex-flow: column wrap; /* Juntar dos propiedades de direction y wrap, se acomoda en columna y el wrap separar el elemento en cada línea*/
   align-items: center; /* Para centrar las cajitas hijas*/
 }
 
-.formulario input{
+.form input{
+  background-color: rgba(252, 243, 181, 1);
   border: none;
   outline: none;
 }
 
-.formulario textarea{
+.form textarea{
+  background-color: rgba(252, 243, 181, 1);
   border: none;
   outline: none;
 }
 
-.formulario button{
+.form button{
   width: 80px;
 }
