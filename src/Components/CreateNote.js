@@ -4,7 +4,7 @@ import { setCollection } from '../firebase/Firebase'
 
 
 export const CreateNote = () => {
-    const[title, setTitle] = useState('');
+    const[title, setTitle] = useState(''); //Valor actual del estado y función que permite alterar los datos
     const[description, setDescription] = useState('');
     const[error, setError] = useState('');
 
@@ -29,7 +29,7 @@ export const CreateNote = () => {
                 <form className="form" onSubmit={setNote}>
                     <input 
                         value={title}
-                        onChange={(e)=>{setTitle(e.target.value)}} 
+                        onChange={(e)=>{setTitle(e.target.value)}} //Para obtener el valor del input
                         type="text" placeholder="Título" 
                         className="titulo" 
                     />
@@ -56,3 +56,4 @@ export const CreateNote = () => {
     </div>
     );
 }
+//UseState: Estado de la aplicación, son datos que pertenecen a un componente

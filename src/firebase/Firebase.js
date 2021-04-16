@@ -29,8 +29,14 @@ export const setCollection = async (title,description) => {
   }
   }
 
+//Recolecta todos los elementos de los documentos de la colección
+export const getNotes = db.collection('notes').get();
 
-  // export const getNotes = async () => {
-  //   const { docs } = await db.collection('notes').get()
-  //   const result = docs.map( element => ({id:element.id, ...element.data() })) //El id del documento, nuevo objeto con el id y sus propiedades
-  // }
+export const deleteNotes = async (id) => {
+  try{
+    await db.collection('notes').doc(id).delete()
+  }
+  catch(error){
+    console.log(error)
+  }
+}
