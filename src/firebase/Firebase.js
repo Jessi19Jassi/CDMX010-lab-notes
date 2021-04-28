@@ -12,22 +12,7 @@ const firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-
-//Crear colección en Firestore
-export const setCollection = async (title,description) => {
-  const newNote = {
-    title:title,
-    description:description
-  }
-  try{
-    const data = await db.collection('notes').add(newNote)
-    console.log('Nueva nota creada', data);
-  }
-  catch(error){
-    console.log('Fallo la nueva nota', error);
-  }
-  }
+  export const db = firebase.firestore();
 
 //Recolecta todos los elementos de los documentos de la colección
 export const getNotes = db.collection('notes').get();

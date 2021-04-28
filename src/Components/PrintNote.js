@@ -1,10 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import { getNotes, deleteNotes } from '../firebase/Firebase';
+import { Modal } from './Modal'
+import './PrintNote.css'
 
 
 export const PrintNote = () => {
     const[note, setNote] = useState([])
-
+    const [open, setOpen] = useState(false);
+    const [selectedNote, setSelectedNote] = useState(null)
+    
     useEffect(() => {
         const print = async () => {
             const { docs } = await getNotes;
@@ -16,6 +20,16 @@ export const PrintNote = () => {
     }
     print();
 }, [])
+
+    const hideModal = () => {
+        console.log('closing modal')
+        setOpen(false);
+    };
+
+    const showModal = () => {
+        setOpen(true);
+        console.log('funciono')
+    };
     
     const deleteN = async (id) => {
             await deleteNotes(id)
@@ -23,27 +37,32 @@ export const PrintNote = () => {
             const newArray = docs.map(item => ({ id: item.id, ...item.data() }))
             setNote(newArray);
     }
-    
+
     return(
         <>
-            <ul>
-                {
-                    note.length !== 0 ? (
-                        note.map(item => (
-                            <div key={item.id}>
-                            <h2>{item.title}</h2>
-                            <p>{item.description}</p>
-                            <button>Editar</button>
-                            <button onClick={(id) => { deleteN(item.id) }}>Borrar</button>
+            <div className="wall">
+                   { 
+                   note.length !== 0 ? (
+                        note.map((item) => (
+                            <div className="containerOne" key={item.id}>
+                                <div className="containerTwo">
+                                    <h2>{item.title}</h2>
+                                    <p>{item.description}</p>
+                                    <button onClick={()=> {setSelectedNote(item); showModal() }}>Editar</button>
+                                    <button onClick={(id) => { deleteN(item.id); }}>Borrar</button>
+                                </div>
                             </div>
                         ))
                     ):(
                         
-                            <span>No hay notas que mostrar</span>
+                        <span>No hay notas que mostrar</span>
                         )
-                }
-            </ul>
+                    }
+            </div>
+                <footer>
+                    <button className ="buttonCreate" onClick={() =>{ showModal() }}>Escribir nueva nota</button>
+                </footer>
+                <Modal onClose={hideModal} open={open} note={selectedNote} />
         </>
-
     )
 }

@@ -1,17 +1,38 @@
-import './App.css';
+import './App.css'
 import React from 'react'
 
-import { CreateNote } from './Components/CreateNote';
+import { Start } from './Components/Start'
+import { Register } from './Components/Register'
 import { PrintNote } from './Components/PrintNote';
+
+import{
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-        <h1>Mis Notas</h1>
-        <PrintNote />
-        <button><a href="#crearNota">Escribir nueva nota</a></button>
-        <CreateNote />
-    </div>
+    <Router>
+      <Link to="/wall">Iniciar Sesion</Link>
+      <Link to="/register">Registrate</Link>
+      <Switch>
+        <Route exact path="/">
+          <Start />
+        </Route>
+        <Route exact path="/register">
+          <Register />
+        </Route>
+        <Route exact path="/wall">
+            <h1>Mis Notas</h1>
+            <PrintNote />
+        </Route>
+      </Switch>
+    </Router>
+      // <div className="App">
+
+      // </div>
   );
 }
 

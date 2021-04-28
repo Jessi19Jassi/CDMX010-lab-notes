@@ -1,0 +1,30 @@
+body{
+    background-color: #92DDEA;
+}
+
+h2{
+    color: black;
+    margin: 120px, 0px, 0px, 0px;
+}
+
+.start .formRegister{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 250px;
+}
+
+.formRegister input{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: space-around;
+    height: 25px;
+    padding: 4px;
+    margin: 16px;
+    width: 230px;
+    width: 300px;
+    border-radius: 30px;
+    border: none;
+    text-align: center;
+}
