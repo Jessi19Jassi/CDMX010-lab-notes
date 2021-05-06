@@ -6,20 +6,6 @@ import { db } from '../firebase/Firebase'
 export const CreateNote = (props) => {
     const [title, setTitle] = useState(props.note ? props.note.title : ""); //Valor actual del estado y función que permite alterar los datos
     const [description, setDescription] = useState(props.note ? props.note.description : "");
-    //const[error, setError] = useState('');
-
-    // const setNote = (e) => {
-    //     e.preventDefault()
-    //     if(!title.trim()){ //Para saber si esta vacío el campo título
-    //         setError('El campo Título está vacío')
-    //     }
-    //     if(!description.trim()){
-    //         setError('El campo Escribir texto está vacío')
-    //     }
-    //     setCollection(title, description);
-    //     setTitle('');
-    //     setDescription('');
-    // }
 
     const setCollection = async (e) => {
         if (props.note) {

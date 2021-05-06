@@ -3,6 +3,7 @@
     display: flex;
     flex-wrap:  wrap;
     height: 100%;
+    margin: 6%;
 }
 .containerOne{
     text-align: center;
@@ -20,7 +21,14 @@
 }
 .contaierTwo{
     margin: 5px;
-    border: dashed palevioletred; 
+}
+
+.buttonEdit{
+    width: 13%;
+}
+
+.buttonDelete{
+    width: 13%;
 }
 
 footer {

@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import { getNotes, deleteNotes } from '../firebase/Firebase';
 import { Modal } from './Modal'
 import './PrintNote.css'
+import edit from '../images/edit.png'
+import deleteAll from '../images/deleteAll.png'
 
 
 export const PrintNote = () => {
@@ -48,8 +50,8 @@ export const PrintNote = () => {
                                 <div className="containerTwo">
                                     <h2>{item.title}</h2>
                                     <p>{item.description}</p>
-                                    <button onClick={()=> {setSelectedNote(item); showModal() }}>Editar</button>
-                                    <button onClick={(id) => { deleteN(item.id); }}>Borrar</button>
+                                    <a href="#" onClick={()=> {setSelectedNote(item); showModal() }}><img className="buttonEdit" src={edit} alt="edit"></img></a>
+                                    <a href="#" onClick={(id) => { deleteN(item.id); }}><img className="buttonDelete" src={deleteAll} alt="deleteAll"></img></a>
                                 </div>
                             </div>
                         ))
