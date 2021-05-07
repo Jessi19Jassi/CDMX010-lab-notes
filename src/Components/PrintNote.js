@@ -42,7 +42,9 @@ export const PrintNote = () => {
 
     return(
         <>
-            <div className="wall">
+            <h1>Mis Notas</h1>
+            <div className="wallPrint">
+                
                    { 
                    note.length !== 0 ? (
                         note.map((item) => (
@@ -61,9 +63,11 @@ export const PrintNote = () => {
                         )
                     }
             </div>
-                <footer>
-                    <button className ="buttonCreate" onClick={() =>{ showModal() }}>Escribir nueva nota</button>
-                </footer>
+                  
+                    <footer className="abajo">
+                        <button className ="buttonCreate" onClick={() =>{ showModal() }}>Escribir nueva nota</button>
+                    </footer>
+                
                 <Modal onClose={hideModal} open={open} note={selectedNote} />
         </>
     )

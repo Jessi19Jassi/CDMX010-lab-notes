@@ -1,11 +1,12 @@
-.wall{
+.wallPrint{
     width: 100%;
     display: flex;
     flex-wrap:  wrap;
     height: 100%;
-    margin: 6%;
+  
 }
 .containerOne{
+
     text-align: center;
     width: 36%;
     background-color: #FFA5D8;
@@ -19,7 +20,7 @@
     }
     
 }
-.contaierTwo{
+.containerTwo{
     margin: 5px;
 }
 
@@ -30,10 +31,16 @@
 .buttonDelete{
     width: 13%;
 }
-
-footer {
+.abajo {
     width: 100%;
+    height: 50px;
+    bottom: 0;
     display: flex;
-    justify-content: space-around;
-    margin-top: 43%;
+    position: fixed;
+    background-color: blue;
+}
+
+.buttonCreate{
+    background-color: antiquewhite;
+    
 }

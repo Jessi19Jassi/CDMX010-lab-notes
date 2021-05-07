@@ -1,5 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
+import 'firebase/auth'
 
 const firebaseConfig = {
     apiKey: "AIzaSyCmOMyOoJRAGrsP-8z0M_GMvxAMjkkQqac",
@@ -11,8 +12,9 @@ const firebaseConfig = {
     measurementId: "G-52B2NK2R34"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  export const db = firebase.firestore();
+  const fire = firebase.initializeApp(firebaseConfig);
+  export const db = fire.firestore();
+  export const auth = fire.auth();
 
 //Recolecta todos los elementos de los documentos de la colección
 export const getNotes = db.collection('notes').get();

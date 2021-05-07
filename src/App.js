@@ -25,7 +25,6 @@ function App() {
           <Register />
         </Route>
         <Route exact path="/wall">
-            <h1>Mis Notas</h1>
             <PrintNote />
         </Route>
       </Switch>
