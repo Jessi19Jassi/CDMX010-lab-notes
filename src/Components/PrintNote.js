@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { getNotes, deleteNotes } from '../firebase/Firebase';
+import { getNotes, deleteNotes, auth } from '../firebase/Firebase';
 import { Modal } from './Modal'
 import './PrintNote.css'
 import edit from '../images/edit.png'
@@ -40,9 +40,15 @@ export const PrintNote = () => {
             setNote(newArray);
     }
 
+    function handleLogout(e){
+        auth.signOut().then(() => console.log('Cerraste sesión'))
+    }
+
     return(
         <>
             <h1>Mis Notas</h1>
+            <h2>Bienvenidx a Paper Notes </h2>
+            <button onClick={handleLogout}>Cerrar Sesión</button>
             <div className="wallPrint">
                 
                    { 
