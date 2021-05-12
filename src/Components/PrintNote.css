@@ -1,12 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Ruluko&display=swap');
+
+.padre{
+    background-color: coral;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.misNotas{
+    color: blueviolet;
+}
+
+.welcome{
+    color: blueviolet;
+}
+
 .wallPrint{
     width: 100%;
     display: flex;
     flex-wrap:  wrap;
     height: 100%;
-  
+    justify-content: center;
 }
 .containerOne{
-
+    font-family: 'Ruluko', sans-serif;
     text-align: center;
     width: 36%;
     background-color: #FFA5D8;
@@ -17,6 +33,8 @@
         text-align: center;
         width: 100%;
         margin: 2vh;
+        font-family: 'Ruluko', sans-serif;
+
     }
     
 }
@@ -24,12 +42,17 @@
     margin: 5px;
 }
 
+.logosPrint{
+    display: flex;
+    justify-content: space-between;
+}
+
 .buttonEdit{
-    width: 13%;
+    width: 40%;
 }
 
 .buttonDelete{
-    width: 13%;
+    width: 40%;
 }
 .abajo {
     width: 100%;
@@ -38,9 +61,28 @@
     display: flex;
     position: fixed;
     background-color: blue;
+    justify-content: center;
 }
 
 .buttonCreate{
     background-color: antiquewhite;
-    
+    font-family: 'Ruluko', sans-serif;
+    border-radius: 20px 20px;
+    width: 39%;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    margin: 1%
+}
+
+.buttonCR{
+    width: 17%;
+    height: 30px;
+    margin-inline-start: auto;
+    border-radius: 20px 20px;
+    background-color: #BE9DDF;
+    border: solid #9579D1;
+    font-family: 'Ruluko', sans-serif;
+    text-align: center;
+    padding: 2px;
 }

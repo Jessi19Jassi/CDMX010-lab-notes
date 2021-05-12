@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Ruluko&display=swap');
 
 
 h2{
     color: black;
     margin: 120px, 0px, 0px, 0px;
+    font-family: 'Ruluko', sans-serif;
 }
 
 .start{
@@ -11,7 +13,13 @@ h2{
     flex-direction: column;
     width: 100%;
     text-align: center;
+    height: 100vh;
+    background-color: #92DDEA;
 } 
+
+/* .madre{
+    background-color: aqua ;
+} */
 
 .logo{
     width: 225px;
@@ -28,7 +36,7 @@ h2{
 
 .google{
     width: 50px;
-    height: 51px;
+    height: 44px;
     margin-top: 5px;
 }
 
@@ -36,14 +44,14 @@ h2{
     width: 82px;
     margin-left: 5%;
     margin-right: 5%;
-    height: 64px;
+    height: 54px;
 }
 
 .formRegister{
     display: flex;
     justify-content: center;
     align-content: center;
-    margin-top: 45px;
+    margin-top: 15px;
 }
 
 .formulario{
@@ -61,6 +69,7 @@ h2{
     border-radius: 30px;
     border: none;
     text-align: center;
+    font-family: 'Ruluko', sans-serif;
 }
 
 .buttonLogin{
@@ -69,9 +78,11 @@ h2{
     border-radius: 20px 20px;
     background-color: #BE9DDF;
     border: solid #9579D1;
+    font-family: 'Ruluko', sans-serif;
 }
 
 .formRegister form a{
     color: blue;
     margin-top: 20px;
+    font-family: 'Ruluko', sans-serif;
 }

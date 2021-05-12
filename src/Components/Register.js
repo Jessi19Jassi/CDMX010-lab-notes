@@ -35,7 +35,7 @@ export const Register = () => {
                                 onChange={(e)=>{setPassword(e.target.value)}}
                                 placeholder="Contraseña" 
                                 type="password"/>
-                            <button value="regUser">Registrate</button>
+                            <button value="regUser" className="buttonLogin">Registrate</button>
                         </form>
                             {
                             msgError !== null ?

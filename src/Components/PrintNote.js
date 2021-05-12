@@ -4,9 +4,10 @@ import { Modal } from './Modal'
 import './PrintNote.css'
 import edit from '../images/edit.png'
 import deleteAll from '../images/deleteAll.png'
+import { Redirect } from 'react-router';
 
 
-export const PrintNote = () => {
+export const PrintNote = (props) => {
     const[note, setNote] = useState([])
     const [open, setOpen] = useState(false);
     const [selectedNote, setSelectedNote] = useState(null)
@@ -44,11 +45,19 @@ export const PrintNote = () => {
         auth.signOut().then(() => console.log('Cerraste sesión'))
     }
 
+
+    if(!props.user){ //Si es falso el usuario lo redirijera a otra parte
+        return <Redirect to="/" />
+    }
+
     return(
         <>
-            <h1>Mis Notas</h1>
-            <h2>Bienvenidx a Paper Notes </h2>
-            <button onClick={handleLogout}>Cerrar Sesión</button>
+            <header className="padre">
+                <button className="buttonCR" onClick={handleLogout}>Cerrar Sesión</button>
+                <h1 className="misNotas">Mis Notas</h1>
+                <h2 className="welcome">Bienvenidx a Paper Notes {props.user.email}</h2>
+            </header>
+           
             <div className="wallPrint">
                 
                    { 
@@ -58,8 +67,10 @@ export const PrintNote = () => {
                                 <div className="containerTwo">
                                     <h2>{item.title}</h2>
                                     <p>{item.description}</p>
-                                    <a href="#" onClick={()=> {setSelectedNote(item); showModal() }}><img className="buttonEdit" src={edit} alt="edit"></img></a>
-                                    <a href="#" onClick={(id) => { deleteN(item.id); }}><img className="buttonDelete" src={deleteAll} alt="deleteAll"></img></a>
+                                    <div className="logosPrint">
+                                        <a href="#" onClick={()=> {setSelectedNote(item); showModal() }}><img className="buttonEdit" src={edit} alt="edit"></img></a>
+                                        <a href="#" onClick={(id) => { deleteN(item.id); }}><img className="buttonDelete" src={deleteAll} alt="deleteAll"></img></a>
+                                    </div>
                                 </div>
                             </div>
                         ))
